@@ -1,0 +1,27 @@
+<!--BEGIN-INTRO-BOX-->
+<section class="page-block">
+    <div class="container">
+        <div class="section">
+            {% for post in site.posts offset: 0 limit: 2  %}
+            {% assign author_id = post.author_staff_member | prepend: "/staff_members/" | append: "/" %}
+            {% assign author = site.staff_members | where: "url", author_id | first %}
+            <article>
+                <h3>{{ post.title }}</h3>
+                {{ post.excerpt }}
+                {% capture content_words %}
+                    {{ post.content | number_of_words }}
+                {% endcapture %}
+                {% capture excerpt_words %}
+                    {{ post.excerpt | number_of_words }}
+                {% endcapture %}
+                {% if excerpt_words != content_words %}
+                    <p><a class="btn btn-sm btn-primary" href="{{ post.url }}" role="button">Читать дальше <i class="fa fa-arrow-circle-right"></i></a></p>
+                {% endif %}
+                <p class="date">{{ post.date | date: '%B %d, %Y' }}</p>
+            </article>
+            {% endfor %}
+            <!--end-section-->
+        </div>
+    </div>
+</section>
+<!--END-INTRO-BOX-->

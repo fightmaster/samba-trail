@@ -1,10 +1,17 @@
 ---
-layout: default
+layout: page
 ---
-<section>
+
+<!--BEGIN-INTRO-BOX-->
+<section id="page" class="page-block">
 	<div class="container">
-		<h2>{{ page.title }}</h2>
-		
-		{{ content }}
+		<div class="section">
+			<article>
+				<h3>{{ page.title }}</h3>
+				{{ content }}
+			</article>
+		</div>
+		<!--end-section-->
 	</div>
 </section>
+

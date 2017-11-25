@@ -1,0 +1,48 @@
+---
+layout: post
+title: Новости <span>«SAMBA TRAIL»/«САМБА ТРЕЙЛ»</span>
+description: «САМБА ТРЕЙЛ» в Саратовской области. 70 и 32 км наедине с природой.
+header_background_image: https://source.unsplash.com/0U_gjae2TKo/2000x1322?a=.png
+newsletter_background_image: https://source.unsplash.com/c8ET5XvBwnU/2000x1322?a=.png
+---
+
+<!--BEGIN-INTRO-BOX-->
+<section class="page-block">
+	<div class="container">
+		<div class="section">
+			{% for post in site.posts offset: 0 limit: 2  %}
+			{% assign author_id = post.author_staff_member | prepend: "/staff_members/" | append: "/" %}
+			{% assign author = site.staff_members | where: "url", author_id | first %}
+			<article>
+				<h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+				{% if post.image.teaser %}
+				<a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ site.baseurl }}/images/{{ post.image.teaser }}"></a>
+				{% endif %}
+				{{ post.content | strip_html | truncate: 350  }} <a href="{{ site.baseurl }}{{ post.url }}">Читать дальше</a>
+				<p class="date">{{ post.date | date: '%B %d, %Y' }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+			</article>
+			{% endfor %}
+			<!--end-section-->
+		</div>
+	</div>
+</section>
+<!--END-INTRO-BOX-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	{% if paginator.next_page %}
+	<a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next">Старше</a>
+	{% else %}
+	<span class="pagination-button">Старше</span>
+	{% endif %}
+
+	{% if paginator.previous_page %}
+	<a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">Новее</a>
+	{% else %}
+	<span class="pagination-button">Новее</span>
+	{% endif %}
+</div>

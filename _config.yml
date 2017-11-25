@@ -1,10 +1,13 @@
-url: https://clean-oryx.cloudvent.net
-baseurl:
+url: https://www.samba.sarsport.ru
+baseurl: /
+title: САМБА ТРЕЙЛ / SAMBA TRAIL
 google_analytics_key:
+description: 'САМБА ТРЕЙЛ'
+
 
 collections:
   staff_members:
-    _hide_content: true
+    _hide_content: false
 
 permalink: pretty
 
@@ -23,3 +26,19 @@ defaults:
 
 donation_embed: '<script src="https://donorbox.org/widget.js" type="text/javascript"></script><iframe src="https://donorbox.org/embed/give-sheep-the-vote?hide_donation_meter=true" height="685px" width="100%" style="max-width:425px; min-width:310px" seamless="seamless" id="dbox-form-embed" name="donorbox" frameborder="0" scrolling="no"></iframe>'
 newsletter_action: "//your-mailchimp-action-url.com"
+
+paginate: 5
+
+gems:
+  - jekyll-paginate
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://www.samba.sarsport.ru" # the base hostname & protocol for your site, e.g. http://example.com
+
+jekyll_admin:
+    hidden_links:
+      - posts
+      - pages
+      - staticfiles
+      - datafiles
+      - configuration
+excerpt_separator: "<!--break-->"

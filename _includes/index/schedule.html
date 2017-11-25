@@ -1,0 +1,40 @@
+<!--BEGIN-SCHEDULE-->
+<section id="schedule" class="page-block">
+    <div class="container">
+        <div class="section no-padding clearfix">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs clearfix">
+                <li class="active">
+                    <a href="#event-schedule" data-toggle="tab"><i class="fa fa-clock-o"></i>
+                        <h5>Программа<small>Регистрация, старт, финиш</small></h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="#promo" data-toggle="tab"><i class="fa fa-play-circle"></i>
+                        <h5>Видео-ролики<small>Разведка дистанции</small></h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="#exec-presence" data-toggle="tab"><i class="fa fa-star"></i>
+                        <h5>Интервью<small>с участниками</small></h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="#event-gallery" data-toggle="tab"><i class="fa fa-picture-o"></i>
+                        <h5>Фотогалерея<small>Samba 2012</small></h5>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                {% include index/schedule/schedule.html %}
+                {% include index/schedule/video.html %}
+                {% include index/schedule/exec-presence.html %}
+                {% include index/schedule/gallery.html %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--END-SCHEDULE-->
